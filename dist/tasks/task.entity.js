@@ -9,31 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetFilterTasks = exports.CreateTaskDto = void 0;
-const class_validator_1 = require("class-validator");
+exports.Task = void 0;
 const taskStatus_enum_1 = require("./taskStatus.enum");
-class CreateTaskDto {
+const typeorm_1 = require("typeorm");
+class Task extends typeorm_1.BaseEntity {
 }
 __decorate([
-    class_validator_1.IsNotEmpty(),
-    __metadata("design:type", String)
-], CreateTaskDto.prototype, "title", void 0);
+    typeorm_1.PrimaryGeneratedColumn(),
+    __metadata("design:type", Number)
+], Task.prototype, "id", void 0);
 __decorate([
-    class_validator_1.IsNotEmpty(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
-], CreateTaskDto.prototype, "description", void 0);
-exports.CreateTaskDto = CreateTaskDto;
-class GetFilterTasks {
-}
+], Task.prototype, "title", void 0);
 __decorate([
-    class_validator_1.IsOptional(),
-    class_validator_1.IsIn([taskStatus_enum_1.TaskStatus.OPEN, taskStatus_enum_1.TaskStatus.IN_PROGRESS, taskStatus_enum_1.TaskStatus.CLOSE]),
+    typeorm_1.Column(),
     __metadata("design:type", String)
-], GetFilterTasks.prototype, "status", void 0);
+], Task.prototype, "description", void 0);
 __decorate([
-    class_validator_1.IsOptional(),
-    class_validator_1.IsNotEmpty(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
-], GetFilterTasks.prototype, "search", void 0);
-exports.GetFilterTasks = GetFilterTasks;
-//# sourceMappingURL=dto.js.map
+], Task.prototype, "status", void 0);
+exports.Task = Task;
+//# sourceMappingURL=task.entity.js.map

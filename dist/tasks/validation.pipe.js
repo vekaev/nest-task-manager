@@ -1,14 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ValidateTaskStatusPipe = void 0;
-const task_model_1 = require("./task.model");
+const taskStatus_enum_1 = require("./taskStatus.enum");
 const common_1 = require("@nestjs/common");
 class ValidateTaskStatusPipe {
     constructor() {
         this.allowedStatuses = [
-            task_model_1.TaskStatus.OPEN,
-            task_model_1.TaskStatus.IN_PROGRESS,
-            task_model_1.TaskStatus.CLOSE
+            taskStatus_enum_1.TaskStatus.OPEN,
+            taskStatus_enum_1.TaskStatus.IN_PROGRESS,
+            taskStatus_enum_1.TaskStatus.CLOSE
         ];
     }
     transform(value) {

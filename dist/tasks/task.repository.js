@@ -6,12 +6,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TasksService = void 0;
-const common_1 = require("@nestjs/common");
-let TasksService = class TasksService {
+exports.TaskReprository = void 0;
+const task_entity_1 = require("./task.entity");
+const typeorm_1 = require("typeorm");
+let TaskReprository = class TaskReprository extends typeorm_1.Repository {
 };
-TasksService = __decorate([
-    common_1.Injectable()
-], TasksService);
-exports.TasksService = TasksService;
-//# sourceMappingURL=tasks.service.js.map
+TaskReprository = __decorate([
+    typeorm_1.EntityRepository(task_entity_1.Task)
+], TaskReprository);
+exports.TaskReprository = TaskReprository;
+//# sourceMappingURL=task.repository.js.map
