@@ -8,7 +8,7 @@ class ValidateTaskStatusPipe {
         this.allowedStatuses = [
             taskStatus_enum_1.TaskStatus.OPEN,
             taskStatus_enum_1.TaskStatus.IN_PROGRESS,
-            taskStatus_enum_1.TaskStatus.CLOSE
+            taskStatus_enum_1.TaskStatus.DONE
         ];
     }
     transform(value) {

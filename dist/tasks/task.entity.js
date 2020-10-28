@@ -12,8 +12,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Task = void 0;
 const taskStatus_enum_1 = require("./taskStatus.enum");
 const typeorm_1 = require("typeorm");
-class Task extends typeorm_1.BaseEntity {
-}
+let Task = class Task extends typeorm_1.BaseEntity {
+};
 __decorate([
     typeorm_1.PrimaryGeneratedColumn(),
     __metadata("design:type", Number)
@@ -30,5 +30,8 @@ __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
 ], Task.prototype, "status", void 0);
+Task = __decorate([
+    typeorm_1.Entity()
+], Task);
 exports.Task = Task;
 //# sourceMappingURL=task.entity.js.map

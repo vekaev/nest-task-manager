@@ -27,7 +27,7 @@ class GetFilterTasks {
 }
 __decorate([
     class_validator_1.IsOptional(),
-    class_validator_1.IsIn([taskStatus_enum_1.TaskStatus.OPEN, taskStatus_enum_1.TaskStatus.IN_PROGRESS, taskStatus_enum_1.TaskStatus.CLOSE]),
+    class_validator_1.IsIn([taskStatus_enum_1.TaskStatus.OPEN, taskStatus_enum_1.TaskStatus.IN_PROGRESS, taskStatus_enum_1.TaskStatus.DONE]),
     __metadata("design:type", String)
 ], GetFilterTasks.prototype, "status", void 0);
 __decorate([
