@@ -20,8 +20,8 @@ let TasksService = class TasksService {
     constructor(taskReprository) {
         this.taskReprository = taskReprository;
     }
-    async getTasks(filterQuery) {
-        return await this.taskReprository.getTasks(filterQuery);
+    async getTasks(filterQuery, user) {
+        return await this.taskReprository.getTasks(filterQuery, user);
     }
     async getOneTask(id) {
         const found = await this.taskReprository.findOne(id);
@@ -36,8 +36,8 @@ let TasksService = class TasksService {
         await task.save();
         return task;
     }
-    async createTask(createTaskDto) {
-        return this.taskReprository.createTask(createTaskDto);
+    async createTask(createTaskDto, user) {
+        return this.taskReprository.createTask(createTaskDto, user);
     }
     async deleteTask(id) {
         const result = await this.taskReprository.delete(id);
