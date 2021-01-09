@@ -4,7 +4,6 @@ import {
   Entity,
   ManyToOne,
   PrimaryGeneratedColumn,
-  RelationId,
 } from 'typeorm';
 import { TaskStatus } from './taskStatus.enum';
 import { User } from './../auth/user.entity';
